@@ -19,6 +19,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         Singleton.shared.lblTotalBill = lblTotalPrice
+        Singleton.shared.vc = self
         lblTotalPrice.text = "₹0"
     }
     

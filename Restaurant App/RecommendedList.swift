@@ -14,6 +14,7 @@ class RecommendedList: UICollectionView,UICollectionViewDelegate,UICollectionVie
     var arrFoodData:[FoodDataModel] = []
     var arrAllProducts:[Product] = []
     var arrCombineFoodModel:[combineFoodModel] = []
+    var isItemAdded = false
     
     override func awakeFromNib() {
         self.delegate = self
@@ -55,14 +56,33 @@ class RecommendedList: UICollectionView,UICollectionViewDelegate,UICollectionVie
     
     @objc func btnAddTapped(sender: UIButton)
     {
-        var totalPrice = Singleton.shared.totalBill
-        arrCombineFoodModel[sender.tag].quantity = 1
-        totalPrice = totalPrice + Int(arrCombineFoodModel[sender.tag].price!)!
-        print("Total Bill = \(totalPrice)")
-        Singleton.shared.totalBill = totalPrice
-        Singleton.shared.lblTotalBill?.text = "₹\(Singleton.shared.totalBill)"
-        //Add to Cart Data
-        Singleton.shared.arrCartData.append(arrCombineFoodModel[sender.tag])
+        for item in Singleton.shared.arrCartData
+        {
+            //Check if item is Already Added
+            if item.productName! == arrCombineFoodModel[sender.tag].productName!
+            {
+                self.isItemAdded = true
+            }
+        }
+        
+        if isItemAdded{
+            print("This item is Already Added to you Cart")
+            let alert = UIAlertController(title: "Already Added", message: "This Food Item is Already Added to your Cart!", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Dismiss", style: .cancel, handler: nil)
+            alert.addAction(okAction)
+            Singleton.shared.vc!.present(alert,animated: true)
+        }else {
+            var totalPrice = Singleton.shared.totalBill
+            arrCombineFoodModel[sender.tag].quantity = 1
+            totalPrice = totalPrice + Int(arrCombineFoodModel[sender.tag].price!)!
+            print("Total Bill = \(totalPrice)")
+            Singleton.shared.totalBill = totalPrice
+            Singleton.shared.lblTotalBill?.text = "₹\(Singleton.shared.totalBill)"
+            //Add to Cart Data
+            Singleton.shared.arrCartData.append(arrCombineFoodModel[sender.tag])
+        }
+        isItemAdded = false
+      
     }
 
 }

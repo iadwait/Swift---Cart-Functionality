@@ -21,6 +21,7 @@ class Singleton{
     var totalBill = 0
     
     var lblTotalBill:UILabel?
+    var vc:UIViewController?
     
     func getAllFoodData() -> [FoodDataModel]
     {
