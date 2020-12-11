@@ -17,6 +17,7 @@ class DishCell: UITableViewCell {
     @IBOutlet var btnInc: UIButton!
     @IBOutlet var btnDec: UIButton!
     @IBOutlet var lblQuantity: UILabel!
+    @IBOutlet var stackViewQuantity: UIStackView!
     
 
     override func awakeFromNib() {

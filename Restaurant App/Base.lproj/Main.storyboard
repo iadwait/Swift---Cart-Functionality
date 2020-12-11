@@ -200,8 +200,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aZH-4E-Et4">
-                                                    <rect key="frame" x="10" y="10" width="10" height="10"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowshape.turn.up.left.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="aZH-4E-Et4">
+                                                    <rect key="frame" x="10" y="10.5" width="10" height="9"/>
+                                                    <color key="tintColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="10" id="NAX-Aj-1qF"/>
                                                         <constraint firstAttribute="width" constant="10" id="lYL-SE-bgP"/>
@@ -219,16 +220,16 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kex-yg-OWg">
-                                                    <rect key="frame" x="28" y="34" width="60" height="14"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="price " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kex-yg-OWg">
+                                                    <rect key="frame" x="28" y="34" width="60" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="Opo-cB-HHa"/>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="14" id="e98-XU-xd2"/>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="yIz-g1-37f"/>
-                                                        <constraint firstAttribute="height" constant="14" id="zbt-Ci-gzJ"/>
+                                                        <constraint firstAttribute="height" constant="20" id="zbt-Ci-gzJ"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="i77-pL-fPy">
@@ -295,6 +296,7 @@
                                             <outlet property="lblDishName" destination="d2l-7s-kAY" id="QTw-wG-1K9"/>
                                             <outlet property="lblPrice" destination="Kex-yg-OWg" id="qjT-gA-kFY"/>
                                             <outlet property="lblQuantity" destination="7u6-aF-uQ8" id="Fqu-jG-8W6"/>
+                                            <outlet property="stackViewQuantity" destination="fmk-zs-KbZ" id="kaG-AN-bg5"/>
                                             <outlet property="symbol" destination="aZH-4E-Et4" id="FBW-O7-RtW"/>
                                         </connections>
                                     </tableViewCell>
